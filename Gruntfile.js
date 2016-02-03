@@ -1,6 +1,5 @@
 'use strict';
 const os = require('os');
-
 module.exports = function (grunt)  {
 	grunt.initConfig({
 		'electron-packager': {
@@ -26,7 +25,6 @@ module.exports = function (grunt)  {
             out       : './test/build',
             icon      : './test/app/recursos/icon',
             name,
-            version   : '0.36.6',
             ignore    : 'bower.json',
             overwrite : true
           }
@@ -34,9 +32,7 @@ module.exports = function (grunt)  {
 			}
 		}
 	});
-
 	grunt.loadTasks('tasks');
-
 	grunt.registerTask('default', [
 		'electron-packager:build',
 		'electron-packager:buildCustom:buildCustomName:win32:all'

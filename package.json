@@ -1,7 +1,7 @@
 {
   "name": "grunt-electron-packager",
   "version": "0.0.1",
-  "description": "Package Electron apps. grant task to create packages electron using electron-packager",
+  "description": "Package Electron apps. Grunt task to create packages electron using electron-packager",
   "keywords": [
     "gruntplugin",
     "electron",
@@ -12,7 +12,8 @@
     "packager",
     "build",
     "app",
-    "apps"
+    "apps",
+    "customer"
   ],
   "author": "Marani Matias Ezequiel",
   "email": "maranimatias@gmail.com",
@@ -32,14 +33,11 @@
     "test": "grunt"
   },
   "dependencies": {
-    "chalk": "^1.0.0",
     "electron-packager": "^5.2.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-nodeunit": "^0.4.1",
-    "path-exists": "^2.0.0"
+    "electron-prebuilt": "^0.36.7"
   }
 }
