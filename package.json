@@ -1,0 +1,43 @@
+{
+  "name": "grunt-electron-plus",
+  "version": "0.0.1",
+  "description": "Package Electron apps.",
+  "keywords": [
+    "gruntplugin",
+    "shell",
+    "command",
+    "cmd",
+    "exec",
+    "spawn",
+    "process",
+    "cli"
+  ],
+  "author": "Marani Matias Ezequiel",
+  "email": "maranimatias@gmail.com",
+  "engines": {
+    "node": "~5.5.0",
+    "npm": "~3.3.12"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MaraniMatias/grunt-electron-plus"
+  },  
+  "files": [
+    "tasks"
+  ],
+  "scripts": {
+    "test": "grunt"
+  },
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "electron-packager": "^5.2.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "path-exists": "^2.0.0"
+  }
+}
