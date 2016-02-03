@@ -16,9 +16,9 @@ $ npm install grunt-electron-packager --save-dev
 const os = require('os');
 require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
 
-	grunt.initConfig({
-		'electron-packager': {
-			build: {
+  grunt.initConfig({
+    'electron-packager': {
+      build: {
         options:{
           platform  : os.platform(),
           arch      : os.arch(),
@@ -30,9 +30,9 @@ require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
           version   : '0.36.7', // set version of electron
           overwrite : true
         }
-			},
-			buildCustom: {
-				options: function (name,platform,arch) {
+      },
+      buildCustom: {
+        options: function (name,platform,arch) {
           return {
             platform  : platform,
             arch      : arch,
@@ -43,15 +43,15 @@ require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
             ignore    : 'bower.json',
             overwrite : true
           }
-				}
-			}
-		}
-	});
-
-	grunt.registerTask('default', [
-		'electron-packager:build',
-		'electron-packager:buildCustom:buildCustomName:win32:all'
-	]);
+        }
+      }
+    }
+  });
+  grunt.loadNpmTasks('grunt-electron-packager');
+  grunt.registerTask('default', [
+    'electron-packager:build',
+    'electron-packager:buildCustom:buildCustomName:win32:all'
+  ]);
 
 ```
 ## Options
