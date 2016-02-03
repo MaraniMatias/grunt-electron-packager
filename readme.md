@@ -60,4 +60,4 @@ See the `electron-packager` [options](https://github.com/maxogden/electron-packa
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Marani Matias Ezequiel](maranimatias@gmail.com)
