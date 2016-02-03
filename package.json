@@ -1,16 +1,18 @@
 {
-  "name": "grunt-electron-plus",
+  "name": "grunt-electron-packager",
   "version": "0.0.1",
-  "description": "Package Electron apps.",
+  "description": "Package Electron apps. grant task to create packages electron using electron-packager",
   "keywords": [
     "gruntplugin",
-    "shell",
+    "electron",
     "command",
     "cmd",
-    "exec",
-    "spawn",
-    "process",
-    "cli"
+    "grunt",
+    "package",
+    "packager",
+    "build",
+    "app",
+    "apps"
   ],
   "author": "Marani Matias Ezequiel",
   "email": "maranimatias@gmail.com",
