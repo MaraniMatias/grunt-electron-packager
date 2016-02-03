@@ -13,7 +13,7 @@ module.exports = function (grunt)  {
           icon      : './test/app/recursos/icon',
           name      : 'nameBuild',
           ignore    : 'bower.json',
-          version   : '0.36.6', // set version of electron
+          version   : '0.36.7', // set version of electron
           overwrite : true
         }
 			},

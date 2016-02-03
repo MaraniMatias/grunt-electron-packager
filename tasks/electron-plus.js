@@ -7,10 +7,12 @@ module.exports = function (grunt) {
 		if (this.data.options === undefined) {
 			throw new Error('`options` required');
 		}
-    electronPackager(typeof options === 'function' ? options.apply(grunt, arguments) : options, function (err)  {
+    electronPackager(typeof options === 'function' ? options.apply(grunt, arguments) : options, function (err,appPath)  {
       if (err) {
         grunt.warn(err);
         return;
+      }else{
+        grunt.log.writeln('\t'+appPath);
       }
       done();
     });
