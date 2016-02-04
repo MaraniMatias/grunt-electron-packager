@@ -19,8 +19,8 @@ module.exports = function (grunt)  {
 			buildCustom: {
 				options: function (name,platform,arch) {
           return {
-            platform  : platform,
-            arch      : arch,
+            platform,
+            arch,
             dir       : './test/app',
             out       : './test/build',
             icon      : './test/app/recursos/icon',
