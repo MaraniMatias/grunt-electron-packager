@@ -1,28 +1,33 @@
-const 
-fs = require('fs'),
-electronPackager = require('electron-packager');
+const
+	fs = require('fs'),
+	electronPackager = require('electron-packager');
 
-module.exports = function (grunt) {
-	grunt.registerMultiTask('electron-packager', 'Run electron-plus commands',  function ()  {
-    var done = this.async();
-		var options = this.data.options;
+module.exports = function(grunt) {
+	grunt.registerMultiTask('electron-packager', 'Run electron-plus commands', function() {
+		var done = this.async(), options;
 		if (this.data.options === undefined) {
 			throw new Error('`options` required');
+		} else {
+			options = typeof (ref = this.data.options) === 'function' ? ref.apply(grunt, arguments) : ref;
 		}
-    fs.access(options.dir , function (err) {
-      if (err){
-        throw new Error('`dir` required - path the app');
-      }
-      electronPackager(typeof options === 'function' ? options.apply(grunt, arguments) : options, function (err,appPath)  {
-        if (err) {
-          grunt.warn(err);
-          return;
-        }else{
-          grunt.log.writeln('\t'+appPath);
-        }
-        done();
-      });
-    });   
+		
+		try {
+			fs.access(options.dir, function(err) {
+				if (err) {
+					grunt.fatal(err instanceof Error ? err : new Error(err));
+				}
+				electronPackager(options, function(err, appPath) {
+					if (err) {
+						grunt.warn(err);
+						return;
+					} else {
+						grunt.log.writeln('\t' + appPath);
+					}
+					done();
+				});
+			});
+		} catch (err) {
+			grunt.fatal(err instanceof Error ? err : new Error(err));
+		}
 	});
 };
-
