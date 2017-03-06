@@ -12,7 +12,8 @@ module.exports = function (grunt) {
           icon: './app/recursos/icon',
           name: 'nameBuild',
           ignore: 'bower.json',
-          version: '0.36.7', // set version of electron
+          version: '1.4.3', // set version of electron
+          asar: true,
           overwrite: true
         }
       },
@@ -26,13 +27,14 @@ module.exports = function (grunt) {
             icon: './app/recursos/icon',
             name,
             ignore: 'bower.json',
+            asar: true,
             overwrite: true
           }
         }
       }
     }
   });
-  grunt.loadTasks('tasks');
+  grunt.loadTasks('./../tasks');
   grunt.registerTask('default', [
     'electron-packager:build',
     'electron-packager:buildCustom:buildCustomName:win32:all'

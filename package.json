@@ -30,8 +30,13 @@
     "tasks"
   ],
   "scripts": {
-    "test": "cd ./test; ./start-tests.sh"
+    "test": "./start-tests.sh",
+    "start": "./node_modules/.bin/electron ./test/app/"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "electron": "^1.6.1",
+    "electron-packager": "^8.5.2",
+    "grunt": "^1.0.1"
+  }
 }

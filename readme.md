@@ -3,6 +3,7 @@
 Grunt task to create packages [Electron](http://electron.atom.io) using  [`electron-packager`](https://github.com/maxogden/electron-packager)
 This is mostly intended for those that have an existing grunt setup and want to integrate Electron app packaging.
 It allows you to create custom options.
+This uses the installed version of electron-packager.
 
 ## Install
 
@@ -28,6 +29,7 @@ require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
           name      : 'nameBuild',
           ignore    : 'bower.json',
           version   : '1.6.1', // set version of electron
+          asar      : true,
           overwrite : true
         }
       },
@@ -41,6 +43,7 @@ require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
             icon      : './app/recursos/icon',
             name,
             ignore    : 'bower.json',
+            asar      : true,
             overwrite : true
           }
         }
@@ -55,6 +58,9 @@ require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
 ```
 
 ## devDependencies
+
+These dependencies must be installed.
+
 ```
 $ npm install grunt --save-dev
 $ npm install electron --save-dev

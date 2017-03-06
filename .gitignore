@@ -1,4 +1,5 @@
 logs
+.npm
 *.log
 *.*~
 pids
@@ -13,6 +14,9 @@ build/
 .vscode/
 app/node_modules/
 node_modules/
+test/node_modules/
+test/app/
+test/build/
 typings/
 app/components/
 *.png
