@@ -30,7 +30,7 @@
     "tasks"
   ],
   "scripts": {
-    "test": "cd ./test; ./test.sh"
+    "test": "cd ./test; ./start-tests.sh"
   },
   "dependencies": {},
   "devDependencies": {}
