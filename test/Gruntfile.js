@@ -7,9 +7,9 @@ module.exports = function (grunt) {
         options: {
           platform: os.platform(),
           arch: os.arch(),
-          dir: './test/app',
-          out: './test/build',
-          icon: './test/app/recursos/icon',
+          dir: './app',
+          out: './build',
+          icon: './app/recursos/icon',
           name: 'nameBuild',
           ignore: 'bower.json',
           version: '0.36.7', // set version of electron
@@ -21,9 +21,9 @@ module.exports = function (grunt) {
           return {
             platform,
             arch,
-            dir: './test/app',
-            out: './test/build',
-            icon: './test/app/recursos/icon',
+            dir: './app',
+            out: './build',
+            icon: './app/recursos/icon',
             name,
             ignore: 'bower.json',
             overwrite: true

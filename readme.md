@@ -7,7 +7,7 @@ It allows you to create custom options.
 ## Install
 
 ```
-$ npm install grunt-electron-packager --save-dev 
+$ npm install grunt-electron-packager --save-dev
 ```
 
 ## Usage
@@ -22,12 +22,12 @@ require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
         options:{
           platform  : os.platform(),
           arch      : os.arch(),
-          dir       : './test/app',
-          out       : './test/build',
-          icon      : './test/app/recursos/icon',
+          dir       : './app',
+          out       : './build',
+          icon      : './app/recursos/icon',
           name      : 'nameBuild',
           ignore    : 'bower.json',
-          version   : '0.36.7', // set version of electron
+          version   : '1.6.1', // set version of electron
           overwrite : true
         }
       },
@@ -36,9 +36,9 @@ require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
           return {
             platform ,
             arch,
-            dir       : './test/app',
-            out       : './test/build',
-            icon      : './test/app/recursos/icon',
+            dir       : './app',
+            out       : './build',
+            icon      : './app/recursos/icon',
             name,
             ignore    : 'bower.json',
             overwrite : true
@@ -52,8 +52,15 @@ require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
     'electron-packager:build',
     'electron-packager:buildCustom:buildCustomName:win32:all'
   ]);
-
 ```
+
+## devDependencies
+```
+$ npm install grunt --save-dev
+$ npm install electron --save-dev
+$ npm install electron-packager --save-dev
+```
+
 ## Options
 
 See the `electron-packager` [options](https://github.com/maxogden/electron-packager#usage).
