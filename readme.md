@@ -63,6 +63,7 @@ These dependencies must be installed.
 
 ```
 $ npm install grunt --save-dev
+$ npm install load-grunt-tasks --save-dev
 $ npm install electron --save-dev
 $ npm install electron-packager --save-dev
 ```
