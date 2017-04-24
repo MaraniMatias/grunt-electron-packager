@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+rm -d -r -f ./node_modules
 rm -d -r -f ./test/app
 git clone https://github.com/electron/electron-quick-start ./test/app
 npm install electron --save-dev
