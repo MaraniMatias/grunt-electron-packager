@@ -30,7 +30,7 @@
     "tasks"
   ],
   "scripts": {
-    "test": "./start-tests.sh",
+    "test": "./runtests.sh",
     "start": "./node_modules/.bin/electron ./test/app/"
   },
   "dependencies": {},
