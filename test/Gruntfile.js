@@ -12,7 +12,7 @@ module.exports = function (grunt) {
           icon: './app/recursos/icon',
           name: 'nameBuild',
           ignore: 'bower.json',
-          version: '1.4.3', // set version of electron
+          electronVersion: '1.6.5', // set version of electron
           asar: true,
           overwrite: true
         }
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
             ignore: 'bower.json',
             asar: true,
             overwrite: true
-          }
+          };
         }
       }
     }

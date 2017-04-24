@@ -1,6 +1,6 @@
 {
   "name": "grunt-electron-packager",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Package Electron apps. Grunt task to create packages electron using electron-packager",
   "keywords": [
     "gruntplugin",
@@ -18,8 +18,8 @@
   "author": "Marani Matias Ezequiel",
   "email": "maranimatias@gmail.com",
   "engines": {
-    "node": "~6.10.0",
-    "npm": "~4.3.0"
+    "node": "~7.09.0",
+    "npm": "~4.5.0"
   },
   "license": "MIT",
   "repository": {
@@ -35,8 +35,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "electron": "^1.6.1",
-    "electron-packager": "^8.5.2",
+    "electron": "^1.6.7",
+    "electron-packager": "^8.6.0",
     "grunt": "^1.0.1"
   }
 }

@@ -21,14 +21,14 @@ require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
     'electron-packager': {
       build: {
         options:{
-          platform  : os.platform(),
-          arch      : os.arch(),
-          dir       : './app',
-          out       : './build',
-          icon      : './app/recursos/icon',
-          name      : 'nameBuild',
-          ignore    : 'bower.json',
-          version   : '1.6.1', // set version of electron
+          platform        : os.platform(),
+          arch            : os.arch(),
+          dir             : './app',
+          out             : './build',
+          icon            : './app/recursos/icon',
+          name            : 'nameBuild',
+          ignore          : 'bower.json',
+          electronVersion : '1.6.1', // set version of electron
           asar      : true,
           overwrite : true
         }
