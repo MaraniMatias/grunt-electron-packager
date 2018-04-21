@@ -17,6 +17,9 @@ module.exports = function (grunt) {
           options = this.data.options;
         }
       } else {
+        if (typeof this.data === 'function') {
+          options = this.options(this.data.apply(grunt, arguments));
+        } else
         if (typeof this.data !== 'undefined') {
           options = this.options(this.data);
         }

@@ -24,6 +24,8 @@ $ npm install electron-packager --save-dev
 
 ## Usage
 
+### Use with task-specific options
+
 ```javascript
 const os = require('os');
 require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
@@ -70,7 +72,7 @@ require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
   ]);
 ```
 
-### Global Options
+### Use with global options for tasks
 
 ```javascript
 const os = require('os');
@@ -112,6 +114,41 @@ require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
   ]);
 ```
 
+```javascript
+const os = require('os');
+require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
+
+  grunt.initConfig({
+    'electron-packager': {
+      options: {
+        asar: true,
+        dir: './app',
+        // icon: './app/recursos/icon',
+        ignore: 'bower.json',
+        out: './build',
+        overwrite: true
+      },
+      build: {
+        arch: os.arch(),
+        name: 'nameBuild-test',
+        platform: os.platform(),
+      },
+      buildCustom: function (name, platform, arch) {
+        return {
+          arch,
+          name,
+          platform
+        };
+      }
+    }
+  });
+  grunt.loadNpmTasks('grunt-electron-packager');
+
+  grunt.registerTask('build', [
+    'electron-packager',
+  ]);
+```
+
 ## Options
 
 See the `electron-packager` [options](https://github.com/maxogden/electron-packager#usage).
@@ -119,3 +156,5 @@ See the `electron-packager` [options](https://github.com/maxogden/electron-packa
 ## License
 
 MIT © [Marani Matias Ezequiel](maranimatias@gmail.com)
+
+> If you give me a star for my work, I will appreciate. It helps a lot and it's free: D

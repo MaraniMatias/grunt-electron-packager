@@ -23,6 +23,7 @@ module.exports = function (grunt) {
             arch,
             asar: true,
             dir: './app',
+            // icon: './app/recursos/icon',
             ignore: 'bower.json',
             name,
             out: './build',
@@ -36,6 +37,6 @@ module.exports = function (grunt) {
   grunt.loadTasks('./../tasks');
   grunt.registerTask('default', [
     'electron-packager:build',
-    'electron-packager:buildCustom:buildCustomName:win32:all'
+    'electron-packager:buildCustom:buildCustomName:win32:x64'
   ]);
 };
