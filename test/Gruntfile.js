@@ -10,9 +10,9 @@ module.exports = function (grunt) {
           dir: './app',
           out: './build',
           icon: './app/recursos/icon',
-          name: 'nameBuild',
+          name: 'nameBuild-test',
           ignore: 'bower.json',
-          electronVersion: '1.6.5', // set version of electron
+          electronVersion: '1.8.4', // set version of electron
           asar: true,
           overwrite: true
         }
@@ -37,6 +37,6 @@ module.exports = function (grunt) {
   grunt.loadTasks('./../tasks');
   grunt.registerTask('default', [
     'electron-packager:build',
-    'electron-packager:buildCustom:buildCustomName:win32:all'
+    //'electron-packager:buildCustom:buildCustomName:win32:all'
   ]);
 };
