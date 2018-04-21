@@ -39,7 +39,8 @@ require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
           icon            : './app/recursos/icon',
           name            : 'nameBuild',
           ignore          : 'bower.json',
-          electronVersion : '1.6.1', // set version of electron
+          // set specific version of electron, If it isn't using the electron's version on your deps.
+          electronVersion: '1.8.4',
           asar      : true,
           overwrite : true
         }
@@ -110,7 +111,6 @@ require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
     'electron-packager',
   ]);
 ```
-
 
 ## Options
 
