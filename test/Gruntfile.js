@@ -21,9 +21,8 @@ module.exports = function (grunt) {
         options: function (name, platform, arch) {
           return {
             arch,
-            // asar: true,
+            asar: true,
             dir: './app',
-            // icon: './app/recursos/icon',
             ignore: 'bower.json',
             name,
             out: './build',

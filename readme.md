@@ -11,6 +11,17 @@ This uses the installed version of electron-packager.
 $ npm install grunt-electron-packager --save-dev
 ```
 
+## devDependencies
+
+These dependencies must be installed.
+
+```bash
+$ npm install grunt --save-dev
+$ npm install load-grunt-tasks --save-dev
+$ npm install electron --save-dev
+$ npm install electron-packager --save-dev
+```
+
 ## Usage
 
 ```javascript
@@ -51,22 +62,55 @@ require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
     }
   });
   grunt.loadNpmTasks('grunt-electron-packager');
-  grunt.registerTask('default', [
+
+  grunt.registerTask('build', [
     'electron-packager:build',
     'electron-packager:buildCustom:buildCustomName:win32:all'
   ]);
 ```
 
-## devDependencies
+### Global Options
 
-These dependencies must be installed.
+```javascript
+const os = require('os');
+require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
 
-```bash
-$ npm install grunt --save-dev
-$ npm install load-grunt-tasks --save-dev
-$ npm install electron --save-dev
-$ npm install electron-packager --save-dev
+  grunt.initConfig({
+    'electron-packager': {
+      options: {
+        asar: true,
+        dir: './app',
+        icon: './app/recursos/icon',
+        ignore: 'bower.json',
+        out: './build',
+        overwrite: true
+      },
+      build: {
+        name: 'nameBuild-test',
+        arch: os.arch(),
+        platform: os.platform(),
+        // set specific version of electron, If it isn't using the electron's version on your deps.
+        electronVersion: '1.8.4',
+      },
+      buildLinux: {
+        name: 'nameBuild-test-linux',
+        arch: 'x64',
+        platform: 'linux',
+      },
+      buildWin: {
+        name: 'nameBuild-test-win',
+        arch: 'x64',
+        platform: 'win32',
+      },
+    }
+  });
+  grunt.loadNpmTasks('grunt-electron-packager');
+
+  grunt.registerTask('build', [
+    'electron-packager',
+  ]);
 ```
+
 
 ## Options
 
