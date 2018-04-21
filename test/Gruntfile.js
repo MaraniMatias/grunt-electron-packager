@@ -3,32 +3,32 @@ const os = require('os');
 module.exports = function (grunt) {
   grunt.initConfig({
     'electron-packager': {
+      options: {
+        asar: true,
+        dir: './app',
+        icon: './app/recursos/icon',
+        ignore: 'bower.json',
+        out: './build',
+        overwrite: true
+      },
       build: {
-        options: {
-          platform: os.platform(),
-          arch: os.arch(),
-          dir: './app',
-          out: './build',
-          icon: './app/recursos/icon',
-          name: 'nameBuild-test',
-          ignore: 'bower.json',
-          electronVersion: '1.8.4', // set version of electron
-          asar: true,
-          overwrite: true
-        }
+        arch: os.arch(),
+        electronVersion: '1.8.4', // set version of electron
+        name: 'nameBuild-test',
+        platform: os.platform(),
       },
       buildCustom: {
         options: function (name, platform, arch) {
           return {
-            platform,
             arch,
+            // asar: true,
             dir: './app',
-            out: './build',
-            icon: './app/recursos/icon',
-            name,
+            // icon: './app/recursos/icon',
             ignore: 'bower.json',
-            asar: true,
-            overwrite: true
+            name,
+            out: './build',
+            overwrite: true,
+            platform
           };
         }
       }
@@ -37,6 +37,6 @@ module.exports = function (grunt) {
   grunt.loadTasks('./../tasks');
   grunt.registerTask('default', [
     'electron-packager:build',
-    //'electron-packager:buildCustom:buildCustomName:win32:all'
+    'electron-packager:buildCustom:buildCustomName:win32:all'
   ]);
 };
